@@ -137,6 +137,7 @@ header {
 
 footer {
   background-color: var(--black);
+  margin-top: 2rem;
 }
 
 .footer__container {

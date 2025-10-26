@@ -1,0 +1,130 @@
+.product {
+  display: grid;
+  background-color: var(--white);
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  max-width: 550px;
+}
+
+.product__picture {
+  width: 100%;
+}
+
+.product__picture img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.product__title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.product__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.product__cat {
+  background-color: var(--main-color);
+  width: max-content;
+  border: 1px solid var(--black);
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+}
+
+.product__price {
+  font-size: 3.5rem;
+}
+
+.form__tamano {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tamano__inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.form__tamano input[type="radio"] {
+  display: none;
+}
+
+.tamano__inputs label {
+  background-color: var(--main-color);
+  border: 1px solid var(--black);
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.form__tamano input[type="radio"]:checked + label,
+.tamano__inputs label:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.form__customize {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.form__color,
+.form__nombre {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__customize select,
+.form__customize input {
+  width: 100%;
+  background-color: unset;
+  border: 1px solid #d9d9d9;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.form__btn {
+  width: 100%;
+  background-color: black;
+  color: var(--main-color);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.product__ingredients {
+  border: 1px solid #d9d9d9;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.product__ingredients h2 {
+  font-size: 1.5rem;
+}
+
+.product__ingredients p {
+  line-height: 1.4;
+  font-size: 1.08rem;
+}
+
+@media (min-width: 800px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: unset;
+  }
+
+  .product__picture img {
+    object-fit: cover;
+  }
+}

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&family=Kalam:wght@300;400;700&display=swap");
-@import "./components/layout/layout.css";
 
 :root {
   --main-color: #ff9dbfe2;
@@ -17,7 +16,7 @@
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1400px !important;
   margin: 0 auto;
   width: 95%;
 }
@@ -37,10 +36,11 @@ button {
   background: none;
   cursor: pointer;
   transition: transform 0.2s;
+  font-weight: bold;
 }
 
 button:hover {
-  transform: scale(1.15);
+  transform: scale(1.05);
 }
 
 a {
