@@ -4,12 +4,10 @@ import "./layout.css";
 
 function Layout() {
   const [showMenu, setShowMenu] = useState(false);
-
   function handleMenuClick(e) {
-    const action = e.target.closest("button").dataset.action;
-    if (action === "open-menu") {
+    if (e.target.closest("button").dataset.action === "open-menu") {
       setShowMenu(true);
-    } else if (action === "close-menu") {
+    } else {
       setShowMenu(false);
     }
   }
@@ -54,7 +52,7 @@ function Layout() {
             </Link>
             <div className="nav__menu--icons">
               <button
-                className={`btn__menu btn-open  btn-open ${
+                className={`btn__menu btn-open ${
                   !showMenu ? "btn__menu--active" : ""
                 }`}
                 data-action="open-menu"
@@ -63,7 +61,7 @@ function Layout() {
                 <img src="\src\assets\icons\hamburger.svg" alt="open-menu" />
               </button>
               <button
-                className={`btn__menu btn-open  btn-open ${
+                className={`btn__menu btn-close ${
                   showMenu ? "btn__menu--active" : ""
                 }`}
                 data-action="close-menu"

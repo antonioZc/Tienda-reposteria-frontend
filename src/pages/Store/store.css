@@ -30,6 +30,9 @@
 .products__form {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .products__input {
@@ -38,6 +41,12 @@
   border: 1px solid #d9d9d9;
   padding: 0.8rem;
   font-size: 1.3rem;
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .products .btn {
