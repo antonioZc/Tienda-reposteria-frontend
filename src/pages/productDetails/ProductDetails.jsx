@@ -1,5 +1,17 @@
+import { useState } from "react";
 import "./productDetails.css";
 export default function ProductDetails() {
+  const [idProduct, setIdProduct] = useState(0);
+  const getProduct = async (idProduct) => {
+    const product = await fetch(
+      `http://localhost:3000/api/products/${idProduct}`
+    );
+    if (product?.message) {
+      return 0;
+    }
+
+    return await product.json();
+  };
   return (
     <main className="product container">
       <picture className="product__picture">

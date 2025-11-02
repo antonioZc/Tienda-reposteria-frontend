@@ -1,10 +1,12 @@
 import "./productCard.css";
-export default function Product() {
+import { formatCurrency } from "../../helpers";
+export default function Product({ product }) {
+  const precioMostrar = parseFloat(product.precio.split(",")[0]);
   return (
     <button className="item">
-      <img src="/src\assets\img\products\melocoton.svg" alt="tarta" />
-      <h3>prueba de titulo oh yeah</h3>
-      <p>35€</p>
+      <img src={product.imgUrl} alt="tarta" />
+      <h3>{product.nombre}</h3>
+      <p>{formatCurrency(precioMostrar)}</p>
     </button>
   );
 }
