@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.bienvenido {
+  font-size: 1.8rem;
+  padding: 1rem;
+}
+
 .mostSold {
   display: flex;
   gap: 20px;

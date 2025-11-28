@@ -1,9 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./layout.css";
+import { useCartStore } from "../../store/cartStore";
+import { useAuthStore } from "../../store/authStore";
+import { useAuthCheck } from "../../hooks/useAuthCheck";
 
 function Layout() {
+  const { isAuthenticated } = useAuthCheck();
+  const { user, logout } = useAuthStore();
   const [showMenu, setShowMenu] = useState(false);
+  const { cart } = useCartStore();
+  const [totalItems, setTotalItems] = useState(0);
+  useEffect(() => {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.quantity;
+    });
+    setTotalItems(total);
+  }, [cart]);
+
+  useEffect(() => {
+    !isAuthenticated && logout();
+  }, []);
+
+  console.log(user);
   function handleMenuClick(e) {
     if (e.target.closest("button").dataset.action === "open-menu") {
       setShowMenu(true);
@@ -31,9 +51,20 @@ function Layout() {
               <Link to="/" className="nav__link">
                 Inicio
               </Link>
-              <Link to="/login" className="nav__link">
-                Login
-              </Link>
+              {!user ? (
+                <Link to="/login" className="nav__link">
+                  Login
+                </Link>
+              ) : (
+                <Link
+                  to="/login?session=closed"
+                  onClick={() => logout()}
+                  className="nav__link"
+                >
+                  Logout
+                </Link>
+              )}
+
               <Link to="/store" className="nav__link">
                 Tienda
               </Link>
@@ -48,6 +79,7 @@ function Layout() {
 
           <div className="nav__icons">
             <Link to="/cart" className="nav__icon">
+              {cart.length > 0 ? <span>{totalItems}</span> : ""}
               <img src="\src\assets\icons\cart.svg" alt="cart" />
             </Link>
             <div className="nav__menu--icons">

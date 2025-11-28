@@ -2,8 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import Product from "../../components/Product/ProductCard";
 import "./store.css";
 import { Link } from "react-router-dom";
+import { useAuthStore } from "../../store/authStore";
 
 export default function Store() {
+  const { user } = useAuthStore();
   const [productos, setProductos] = useState([]);
   const [catActive] = useState(true);
   const carouselRef = useRef(null);
@@ -55,6 +57,7 @@ export default function Store() {
 
   return (
     <div className="store__container container">
+      {user ? <p className="bienvenido">Bienvenido, {user.nombre}</p> : ""}
       <h1>Productos Más Vendidos</h1>
 
       <section

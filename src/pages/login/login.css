@@ -1,3 +1,9 @@
+.param {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
 .login__container {
   display: flex;
   flex-direction: column;
@@ -34,7 +40,18 @@
   padding: 2rem 1rem;
 }
 
-.form div {
+.form-status {
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.error {
+  background-color: crimson;
+}
+
+.form__div {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;

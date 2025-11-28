@@ -18,8 +18,8 @@
 
 .item__details {
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .item__img {
@@ -51,11 +51,6 @@
 @media (min-width: 650px) {
   .item__title {
     font-size: 1.6rem;
-  }
-  .item__details {
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
   }
 
   .cart__item {

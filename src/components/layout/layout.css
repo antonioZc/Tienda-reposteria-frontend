@@ -45,6 +45,7 @@ header {
   position: fixed;
   top: 75px;
   right: 40px;
+  z-index: 10;
 }
 
 .nav__links {
@@ -58,6 +59,7 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   overflow: hidden;
+  z-index: 2;
 }
 
 .nav__links--active {
@@ -90,6 +92,26 @@ header {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.nav__icon {
+  position: relative;
+  z-index: 1;
+}
+
+.nav__icon span {
+  position: absolute;
+  top: -1rem;
+  right: -3px;
+  background-color: crimson;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 23px;
+  text-align: center;
 }
 
 @media (min-width: 800px) {

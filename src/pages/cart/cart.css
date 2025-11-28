@@ -29,6 +29,12 @@
   gap: 1rem;
 }
 
+.cart__empty {
+  text-align: center;
+  margin: 2rem;
+  font-size: 1.8rem;
+}
+
 .cart__total {
   font-size: 2rem;
 }
